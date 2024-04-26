@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/janela.png" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="imagens/LOGO__1_-removebg-preview.png" alt="">
+            <ul class="navbar">
+                <li><a href="index.html">Inicio</li></a>
+                <li>Sobre mim</li>
+                <li>|</li>
+                <li><a href="login.html">Login</li></a>
+                <li><a href="cadastro.html">Cadastro</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="box_login">
+            <div class="formulario">
+                <h2>LOGIN</h2>
+                <label>Email: </label>
+                <span><input type="email" placeholder="E-mail" id="input_email"><br></span>
+                <div id="div_email" class="resposta"></div>
+                <label>Senha: </label>
+                <span><input type="password" placeholder="Senha" id="input_senha"><br></span>
+                <div id="div_senha" class="resposta"></div>
+                <span><button onclick="logar()">Entrar</button></span>
+                <div id="div_nulo" class="resposta"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

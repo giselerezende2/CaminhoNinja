@@ -24,3 +24,121 @@ body {
     color: black;
     align-items: center;
 }
+
+.header img {
+    float: left;
+    margin-right: 750px;
+    width: 110px;
+    height: auto;
+}
+
+.header .container {
+    justify-content: space-between;
+
+}
+
+.social {
+    background-color: #fff;
+    padding: 40px 0px;
+}
+
+.social .container {
+    justify-content: space-between;
+}
+
+.card {
+    width: 200px;
+    text-align: center;
+    border: 5px solid black;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 150px;
+}
+
+.card h4 {
+    font-size: 24px;
+}
+
+.footer {
+    height: 100px;
+    background-color: #ff944e;
+
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.footer .container p {
+    font-weight: bold;
+}
+
+.sobre {
+    padding: 20px;
+}
+
+.sobre-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sobre-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.box_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px; 
+    height: 200px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    
+}
+.formulario {
+    text-align: center;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+}
+
+.box_cadastro{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 50px;
+    padding: auto;
+    width: 1000px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.403);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.86);
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.formulario_cadastro{
+    width: 800px;
+    margin: 0px;
+    padding: 40px 80px 40px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
