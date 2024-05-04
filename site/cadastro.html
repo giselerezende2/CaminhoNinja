@@ -15,10 +15,10 @@
                 <img src="imagens/logo.png" alt="">
             </div>
             <div class="opt">
-                <li>Inicio</li>
-                <li>Sobre</li>
-                <li>Cadastro</li>
-                <li>Login</li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
             </div>
             <div class="last">
                 <img src="imagens/narutinho.gif" alt="">
@@ -26,19 +26,19 @@
         </div>
         <div class="box2">
             <div class="box_cadastro">
-                <div class="formulario">
+                <div class="formulariO">
                     <h2>CADASTRO</h2>
                     <label>Nome Completo: </label>
-                    <span><input type="nome" placeholder="Nome Completo" id="input_nome"><br><br></span>
+                    <span><input type="nome" placeholder="Nome Completo" id="nome_input"><br><br></span>
                     <div id="div_nome" class="resposta"></div>
                     <label>Email: </label>
-                    <span><input type="email" placeholder="E-mail" id="input_email"><br><br></span>
+                    <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
                     <div id="div_email" class="resposta"></div>
                     <label>Senha: </label>
-                    <span><input type="password" placeholder="Senha" id="input_senha"><br><br></span>
+                    <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
                     <div id="div_senha" class="resposta"></div>
                     <label>Confirmação da Senha: </label>
-                    <span><input type="password" placeholder="Senha" id="input_confirmacao"><br><br></span>
+                    <span><input type="password" placeholder="Senha" id="confirmacao_senha_input"><br><br></span>
                     <div id="div_confirmacao" class="resposta"></div>
                     <span><button onclick="logar()">Cadastrar</button></span>
                     <div id="div_nulo" class="resposta"></div>
@@ -47,24 +47,24 @@
         </div>
     </div>
 
-   
+
 </body>
 
 </html>
 <script>
     function logar() {
-        var nome = input_nome.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmacao = input_confirmacao.value;
-
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
         var cadastro = true
-        var tamanho_nome = nome.length;
-        var arroba = email.indexOf('@');
-        var tamanho_senha = senha.length
-
-        if (nome == '' || email == '' || senha == '' || confirmacao == '') {
+        var tamanho_nome = nomeVar.length;
+        var arroba = emailVar.indexOf('@');
+        var ponto = emailVar.indexOf('.');
+        var tamanho_senha = senhaVar.length
+        if (nomeVar == '' || emailVar == '' || senhaVar == '' || confirmacaoSenhaVar == '') {
             div_nulo.innerHTML = `*Preencha o(s) campo(s) acima com seus dados`
+
         } else {
             div_nulo.innerHTML = ''
         }
@@ -74,8 +74,8 @@
         } else {
             div_nome.innerHTML = ''
         }
-        if (arroba < 0) {
-            div_email.innerHTML = `O email deve conter @`
+        if (arroba < 1 || ponto < 1) {
+            div_email.innerHTML = `O email deve conter @ e '.'`
             cadastro = false;
         } else {
             div_email.innerHTML = ''
@@ -86,8 +86,8 @@
         } else {
             div_senha.innerHTML = ''
         }
-        if (confirmacao != senha || senha == '') {
-            div_confirmacao.innerHTML = `A senha deve estar igual a senha anterior`
+        if (confirmacaoSenhaVar != senhaVar || senhaVar == '') {
+            div_confirmacao.innerHTML = `A confirmação de senha deve ser igual a senha`
             cadastro = false;
         } else {
             div_confirmacao.innerHTML = ''
@@ -96,8 +96,4 @@
             alert('O cadastro foi realizado com sucesso!')
         }
     }
-
-
-
-
 </script>
