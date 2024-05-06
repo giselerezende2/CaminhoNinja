@@ -2,10 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: #010730;
+    /* background: #010730; */
 }
 
-.nav{
+.nav {
     width: 80%;
     height: 85px;
     border-radius: 50px;
@@ -13,79 +13,86 @@ body {
     background: #ed924c;
     display: flex;
     justify-content: space-between;
-    
-   }
-   .main-nav{
+
+}
+
+.main-nav {
     width: 100%;
     height: 100vh;
     background: #010730;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
-   }
-  .opt{
+
+}
+
+.opt {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 500px;
-  }
-  .opt li{
+}
+
+.opt li {
     list-style: none;
     font-size: 20px;
     color: #fff;
-  }
-  .logo{
+}
+
+.logo {
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .last{
+}
+
+.last {
     width: 200px;
     display: flex;
     justify-content: center;
-  }
-  
-  .logo img{
-    margin-right:-170px;
+}
+
+.logo img {
+    margin-right: -170px;
     width: 200px;
-  }
-  
-  .box2 {
+}
+
+.box2 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .box_login {
+}
+
+.box_login {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px; 
+    width: 400px;
     height: 250px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 20px;
     border: 4px solid #ed924c;
     background-color: whitesmoke;
     border-radius: 25px;
-  }
-  
-  .formulariO {
+}
+
+.formulariO {
     text-align: center;
-  }
-  .box_cadastro{
+}
+
+.box_cadastro {
     display: flex;
     justify-content: center;
     padding: 20px 0px;
     width: 500px;
     border: 4px solid #ed924c;
-    border-radius: 25px ;
+    border-radius: 25px;
     background-color: whitesmoke;
     align-items: center;
     flex-direction: column;
-  }
-  .formulariO button{
+}
+
+.formulariO button {
     font-family: "Barlow", sans-serif;
     border: 0;
     border-radius: 5px;
@@ -97,45 +104,111 @@ body {
     width: 120px;
     align-self: center;
     margin-top: 5px;
-  }
-  
-  .formulariO input {
+}
+
+.formulariO input {
     border: 2px solid black;
     text-align: center;
     border-radius: 10px;
     margin: 0;
-  }
-  
-  
-  .resposta {
+}
+
+
+.resposta {
     font-size: 10px;
     font-weight: bold;
     color: red;
     margin: 5px 0px 5px 0px;
-  }
-  .inicio{
+}
+
+.inicio {
     display: flex;
     align-items: start;
-  }
-  p{
+}
+
+p {
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
- }
+}
 
 
- .molde {
+.molde {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+
+.img1 {
+    max-width: 100%;
+}
+
+
+
+new 
+    .content {
+        text-align: center;
+        color: #fff;
+        margin-top: 20px;
+    }
+    
+    .inicio img {
+        max-width: 100%;
+    }
+    
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .molde {
         margin: 10px;
         display: flex;
         align-items: center; 
     }
     
- .info {
-        margin-right: 20px; 
+    .info {
+        margin-left: 20px;
         padding: 10px 20px;
-        font-size: 14px;
+        background: #ed924c;
+        border-radius: 10px;
     }
     
-    
- .img1 {
-        max-width: 100%; 
+    .img1 {
+        max-width: 100%;
+        border-radius: 10px;
     }
+    h1
+{
+    color: #fff;
+}
+
+.ninja{
+margin: 5px;
+width: 150px;
+height: 150px;
+border-radius: 10px;
+}
+.card {
+
+    background-color: white;
+    width: 300px;
+    text-align: center;
+    border: 5px solid black;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.403);
+    margin: 0 auto;
+}
+.mensagem{
+    margin: 0 auto;
+    text-align: center;
+}
