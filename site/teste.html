@@ -9,101 +9,76 @@
 </head>
 
 <body>
-    <div id="div_mensagem1">
+    
+    <div>
+        <h3>Quiz #01</h3>
+    </div>
+    <div id="div_mensagem1" class="card">
         <h3>Questão 1</h3>
         <img class="ninja" src="imagens/ninja1.jpg" alt=""><br>
-        <input type="radio" id="input_a1" name="1">A) Rock Lee<br>
-        <input type="radio" id="input_b1" name="1">B) Shikamaru<br>
-        <input type="radio" id="input_c1" name="1">C) Sasuke<br>
-        <input type="radio" id="input_d1" name="1">D) Gaara<br>
+        <label id="p1"> 
+            <input type="radio" id="input_a1" name="1" ><br>
+        </label>
+        <label id="p2">
+            <input type="radio" id="input_b1" name="1"><br>
+        </label>
+       <label id="p3">
+        <input type="radio" id="input_c1" name="1"><br>
+       </label>
+        <label id="p4">
+            <input type="radio" id="input_d1" name="1"><br>
+        </label>
+        
         <button onclick="analisar()">Próxima</button>
     </div>
-    <div id="div_mensagem2" style="display: none;">
+    <div id="div_mensagem2" style="display: none;" class="card">
         <h3>Questão 2</h3>
         <img class="ninja" src="imagens/ninja2.jpeg" alt=""><br>
-        <input type="radio" id="input_a2" name="2">A) Minato<br>
-        <input type="radio" id="input_b2" name="2">B) Nagato<br>
-        <input type="radio" id="input_c2" name="2">C) Kakashi<br>
-        <input type="radio" id="input_d2" name="2">D) Itachi<br>
-        <button onclick="analisar1()">Próxima</button>
+        <label> 
+            <input type="radio" id="input_a1" name="1"><br>
+        </label>
+        <label>
+            <input type="radio" id="input_b1" name="1"><br>
+        </label>
+       <label >
+        <input type="radio" id="input_c1" name="1"><br>
+       </label>
+        <label>
+            <input type="radio" id="input_d1" name="1"><br>
+        </label>
+        
+        <button onclick="analisar()">Próxima</button>
     </div>
-    <div id="div_mensagem3" style="display: none;">
-        <h3>Questão 3</h3>
-        <img class="ninja" src="imagens/ninja3.jpeg" alt=""><br>
-        <input type="radio" id="input_a3" name="3">A) Temari<br>
-        <input type="radio" id="input_b3" name="3">B) Rim<br>
-        <input type="radio" id="input_c3" name="3">C) Sakura <br>
-        <input type="radio" id="input_d3" name="3">D) Tsunade<br>
-        <button onclick="analisar2()">Próxima</button>
-    </div>
-    <div id="div_mensagem4" style="display: none;">
-        <h3>Questão 4</h3>
-        <img class="ninja" src="imagens/ninja4.jpeg" alt=""><br>
-        <input type="radio" id="input_a4" name="4">A) Neji<br>
-        <input type="radio" id="input_b4" name="4">B) Madara<br>
-        <input type="radio" id="input_c4" name="4">C) Tobirama<br>
-        <input type="radio" id="input_d4" name="4">D) Hashirama<br>
-        <button onclick="analisar3()">Próxima</button>
-    </div>
-    <div id="div_mensagem5" style="display: none;">
-        <h3>Questão 5</h3>
-        <img class="ninja" src="imagens/ninja5.jpeg" alt=""><br>
-        <input type="radio" id="input_a5" name="5">A) Ino<br>
-        <input type="radio" id="input_b5" name="5">B) Tenten<br>
-        <input type="radio" id="input_c5" name="5">C) Konan<br>
-        <input type="radio" id="input_d5" name="5">D) Hinata<br>
-        <button onclick="finalizar()">Finalizar</button>
-    </div>
-    <div id="div_mensagem"></div>
-
-    <script>
-        var acerto = 0;
-
-        function analisar() {
-            var alternativa1 = document.getElementById("input_a1").checked;
-            if (alternativa1) {
-                acerto++;
-            }
-            document.getElementById("div_mensagem1").style.display = "none";
-            document.getElementById("div_mensagem2").style.display = "block";
-        }
-
-        function analisar1() {
-            var alternativa2 = document.getElementById("input_c2").checked;
-            if (alternativa2) {
-                acerto++;
-            }
-            document.getElementById("div_mensagem2").style.display = "none";
-            document.getElementById("div_mensagem3").style.display = "block";
-        }
-
-        function analisar2() {
-            var alternativa3 = document.getElementById("input_b3").checked;
-            if (alternativa3) {
-                acerto++;
-            }
-            document.getElementById("div_mensagem3").style.display = "none";
-            document.getElementById("div_mensagem4").style.display = "block";
-        }
-
-        function analisar3() {
-            var alternativa4 = document.getElementById("input_d4").checked;
-            if (alternativa4) {
-                acerto++;
-            }
-            document.getElementById("div_mensagem4").style.display = "none";
-            document.getElementById("div_mensagem5").style.display = "block";
-        }
-
-        function finalizar() {
-            var alternativa5 = document.getElementById("input_c5").checked;
-            if (alternativa5) {
-                acerto++;
-            }
-            document.getElementById("div_mensagem5").style.display = "none";
-            document.getElementById("div_mensagem").innerText = "Número de acertos: " + acerto;
-        }
-    </script>
+    <div id="div_mensagem" class="mensagem"></div>
 </body>
 
 </html>
+<script>
+    var lista_pergunta1 = ['rock lee', 'shikamaru', 'sasuke', 'gaara'];
+    var lista_pergunta2 = ['minato', 'nagato', 'kakashi', 'itachi'];
+    var acerto = 0;
+
+    function analisar() {
+        var alternativa1 = input_a1.checked;
+        var alternativa2 = input_c2.checked;
+    
+        
+        if (alternativa1) {
+            acerto++
+        
+        div_mensagem1.style.display = "none"
+        div_mensagem2.style.display = "block"
+    }
+
+   
+        
+        if (alternativa2) {
+            acerto++
+        
+        div_mensagem2.style.display = "none"
+    }
+
+    }
+        div_mensagem.innerHTML = `Número de acertos: ${acerto} <br>`
+    
+</script>

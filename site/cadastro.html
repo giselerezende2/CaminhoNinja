@@ -4,55 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de cadastro</title>
     <link rel="stylesheet" href="style.css">
-    <title>Cadastro</title>
 </head>
 
-<body>
-    <div class="main-nav">
-        <div class="nav">
-            <div class="logo">
-                <img src="imagens/logo.png" alt="">
-            </div>
-            <div class="opt">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="login.html">Login</a></li>
-            </div>
-            <div class="last">
-                <img src="imagens/narutinho.gif" alt="">
-            </div>
+<body>  
+  <div class="main-nav">
+    <div class="nav">
+        <div class="logo">
+            <img src="" alt="">Logo
         </div>
-        <div class="box2">
-            <div class="box_cadastro">
-                <div class="formulariO">
-                    <h2>CADASTRO</h2>
-                    <label>Nome Completo: </label>
-                    <span><input type="nome" placeholder="Nome Completo" id="nome_input"><br><br></span>
-                    <div id="div_nome" class="resposta"></div>
-                    <label>Email: </label>
-                    <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
-                    <div id="div_email" class="resposta"></div>
-                    <label>Senha: </label>
-                    <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
-                    <div id="div_senha" class="resposta"></div>
-                    <label>Confirmação da Senha: </label>
-                    <span><input type="password" placeholder="Senha" id="confirmacao_senha_input"><br><br></span>
-                    <div id="div_confirmacao" class="resposta"></div>
-                    <span><button onclick="logar()">Cadastrar</button></span>
-                    <div id="div_nulo" class="resposta"></div>
-                </div>
-            </div>
+        <div class="opt">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li>
+        </div>
+        <div class="last">
+            <img src="imagens/narutinho.gif" alt="">
         </div>
     </div>
-
-
+    <div class="box">
+    <div class="conteudo">
+      <div class="texto">CADASTRO</div><br>
+        <div class="input_login">
+          <label>Nome Completo: </label>
+          <span><input type="nome" placeholder="Nome Completo" id="nome_input"><br><br></span>
+          <div id="div_nome" class="resposta"></div>
+          <label>Email: </label>
+          <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
+          <div id="div_email" class="resposta"></div>
+          <label>Senha: </label>
+          <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
+          <div id="div_senha" class="resposta"></div>
+          <label>Confirmação da Senha: </label>
+          <span><input type="password" placeholder="Senha" id="confirmacao_senha_input"><br><br></span>
+          <div id="div_confirmacao" class="resposta"></div>
+          <span><button onclick="cadastrar()">Cadastrar</button></span>
+          <div id="div_nulo" class="resposta"></div>
+        </div>
+      </div>
+    </div>
+</div>
+   
 </body>
 
 </html>
 <script>
-    function logar() {
+    function cadastrar() {
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;

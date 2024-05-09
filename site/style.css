@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* background: #010730; */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    /* align-items: center;
+    justify-content: center; */
+    background: #151515;
+    background: url(https://wallpapercave.com/wp/wp4789300.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .nav {
@@ -10,20 +18,33 @@ body {
     height: 85px;
     border-radius: 50px;
     margin-top: 10px;
-    background: #ed924c;
+    margin-left: 150px;
+    background: #010730;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
 }
 
 .main-nav {
     width: 100%;
     height: 100vh;
-    background: #010730;
-    display: flex;
-    justify-content: center;
+    background: #151515;
+    background: url(https://wallpapercave.com/wp/wp4789300.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     flex-wrap: wrap;
 
+}
+
+.opt a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.opt a:hover {
+    text-decoration: underline;
+    color: orange;
 }
 
 .opt {
@@ -38,58 +59,73 @@ body {
     font-size: 20px;
     color: #fff;
 }
-
-.logo {
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .last {
     width: 200px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
 
-.logo img {
-    margin-right: -170px;
-    width: 200px;
-}
-
-.box2 {
+.container {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
+    top: 0;
+    position: relative;
 }
 
-.box_login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 250px;
+.header {
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
-    border: 4px solid #ed924c;
-    background-color: whitesmoke;
-    border-radius: 25px;
+    top: 0;
+    justify-content: center;
+    align-items: center;
 }
 
-.formulariO {
+.logo {
+    height: 25px;
+    width: 25px;
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.conteudo {
+    width: 400px;
+    padding: 20px 30px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo .texto {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
     text-align: center;
 }
 
-.box_cadastro {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px;
-    width: 500px;
-    border: 4px solid #ed924c;
-    border-radius: 25px;
-    background-color: whitesmoke;
-    align-items: center;
-    flex-direction: column;
+.input_login {
+    text-align: center;
+}
+
+button{
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+button:hover {
+    background-color: blue;
+    color: white;
+    
 }
 
 .formulariO button {
@@ -150,53 +186,53 @@ p {
 }
 
 
+.content {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
 
-new 
-    .content {
-        text-align: center;
-        color: #fff;
-        margin-top: 20px;
-    }
-    
-    .inicio img {
-        max-width: 100%;
-    }
-    
-    .posts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .molde {
-        margin: 10px;
-        display: flex;
-        align-items: center; 
-    }
-    
-    .info {
-        margin-left: 20px;
-        padding: 10px 20px;
-        background: #ed924c;
-        border-radius: 10px;
-    }
-    
-    .img1 {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-    h1
-{
+.inicio img {
+    max-width: 100%;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.molde {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background: #ed924c;
+    border-radius: 10px;
+}
+
+.img1 {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+h1 {
     color: #fff;
 }
 
-.ninja{
-margin: 5px;
-width: 150px;
-height: 150px;
-border-radius: 10px;
+/* QUIZ */
+.ninja {
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
 }
-.card {
+
+.card1 {
 
     background-color: white;
     width: 300px;
@@ -208,7 +244,33 @@ border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.403);
     margin: 0 auto;
 }
-.mensagem{
+
+.mensagem {
     margin: 0 auto;
     text-align: center;
 }
+
+
+.wrapper {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    align-self: center;
+
+}
+
+.card {
+    width: 300px;
+    height: 360px;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(178, 75, 75, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+

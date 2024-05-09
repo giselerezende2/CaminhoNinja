@@ -4,52 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
 </head>
 
 <body>
-    <div class="main-nav">
-        <div class="nav">
-            <div class="logo">
-                <img src="imagens/logo.png" alt="">
+        <div class="main-nav">
+            <div class="nav">
+                <div class="logo">
+                    <img src="" alt="">Logo
+                </div>
+                <div class="opt">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </div>
+                <div class="last">
+                    <img src="imagens/narutinho.gif" alt="">
+                </div>
             </div>
-            <div class="opt">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="login.html">Login</a></li>
-            </div>
-            <div class="last">
-                <img src="imagens/narutinho.gif" alt="">
-            </div>
-        </div>
-        <div class="box2">
-            <div class="box_login">
-                <div class="formulariO">
-                    <h2>LOGIN</h2>
+        <div class="box">
+            <div class="conteudo">
+                <div class="texto">LOGIN</div><br>
+                <div class="input_login">
                     <label>Email: </label>
-                    <span><input type="email" placeholder="E-mail" id="input_email"><br><br></span>
+                    <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
                     <div id="div_email" class="resposta"></div>
                     <label>Senha: </label>
-                    <span><input type="password" placeholder="Senha" id="input_senha"><br><br></span>
+                    <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
                     <div id="div_senha" class="resposta"></div>
-                    <span><button onclick="logar()">Entrar</button></span>
+                    <span class="botao"><button onclick="logar()">Entrar</button></span>
                     <div id="div_nulo" class="resposta"></div>
                 </div>
             </div>
+
+
         </div>
-    </div>
-   
-    
-    
-</body>
+    </body>
 
 </html>
 <script>
     function logar() {
-        var email = input_email.value;
-        var senha = input_senha.value;
+        var email = email_input.value;
+        var senha = senha_input.value;
 
         var login = true;
 
@@ -70,7 +68,6 @@
             if (senha != '123456789') {
                 div_senha.innerHTML = `A senha está incorreta`
                 login = false
-                cadastro = false;
             } else {
                 div_senha.innerHTML = ''
             }
@@ -81,7 +78,4 @@
         }
 
     }
-
-
-
 </script>
