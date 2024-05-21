@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="assets/icon/janela.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body class="com-img">
+
+    <!--Header-->
+
+    <div class="main-nav">
+        <div class="nav">
+            <div>
+                <img src="assets/imgs/LOGO__2_-removebg-preview.png" alt="" class="logo">
+            </div>
+            <div class="opt">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+            </div>
+            <div class="last">
+                <img src="assets/imgs/narutinho.gif" alt="" class="narutinho">
+            </div>
+        </div>
+        <div class="box">
+            <div class="conteudo">
+                <div class="texto">LOGIN</div><br>
+                <div class="input_login">
+                    <div class="cont-login">
+                        <label>Email: </label>
+                        <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
+                    </div>
+                    <div id="div_email" class="resposta"></div>
+                    <div class="cont-login">
+                        <label>Senha: </label>
+                        <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
+                    </div>
+                    <div id="div_senha" class="resposta"></div>
+                        <button onclick="entrar()" class="botao">Entrar</button>
+                    <div id="div_nulo" class="resposta"></div>
+                </div>
+            </div>
+
+
+        </div>
+</body>
+
+</html>
+
+<script>
+
+    function entrar() {
+        // aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

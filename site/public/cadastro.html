@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="icon" href="assets/icon/janela.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body class="com-img"  onload="listar()">
+  <!--header inicio-->
+  <div class="main-nav">
+    <div class="nav">
+        <div>
+            <img src="assets/imgs/LOGO__2_-removebg-preview.png" alt="" class="logo">
+        </div>
+        <div class="opt">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li>
+        </div>
+        <div class="last">
+            <img src="assets/imgs/narutinho.gif" alt="" class="narutinho">
+        </div>
+    </div>
+    <!--header fim-->
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+      <div class="box">
+        <div class="conteudo">
+          <div class="texto">CADASTRO</div><br>
+          <div class="input_login">
+            <div class="cont-login">
+            <label>Nome: </label>
+            <span><input type="nome" placeholder="Nome Completo" id="nome_input"><br><br></span>
+          </div>
+            <div id="div_nome" class="resposta"></div>
+            <div class="cont-login">
+            <label>Email: </label>
+            <span><input type="email" placeholder="E-mail" id="email_input"><br><br></span>
+          </div>
+            <div id="div_email" class="resposta"></div>
+            <div class="cont-login">
+            <label>Senha: </label>
+            <span><input type="password" placeholder="Senha" id="senha_input"><br><br></span>
+          </div>
+            <div id="div_senha" class="resposta"></div>
+            <div class="cont-login">
+            <label class="conf">Confirmação da Senha: </label>
+            <span><input type="password" placeholder="Senha" id="confirmacao_senha_input"><br><br></span>
+          </div>
+            <div id="div_confirmacao" class="resposta"></div>
+            <span><button class="botao" onclick="cadastrar()">Cadastrar</button></span>
+            <div id="div_nulo" class="resposta"></div>
+          </div>
+        </div>
+      </div>
+     
+      <div id="div_aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif" />
+      </div>
+
+      <div id="div_erros_login"></div>
+    </div>
+  </div>
+  </div>
+
+  <!--footer inicio-->
+  <!-- <div class="footer">
+    <div class="container">
+      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div> -->
+  <!--footer fim-->
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var cadastro = true
+    var tamanho_nome = nomeVar.length;
+    var arroba = emailVar.indexOf('@');
+    var ponto = emailVar.indexOf('.');
+    var tamanho_senha = senhaVar.length
+
+    if (nomeVar == '' || emailVar == '' || senhaVar == '' || confirmacaoSenhaVar == '') {
+      div_nulo.innerHTML = `*Preencha o(s) campo(s) acima com seus dados`
+      finalizarAguardar();
+      return false;
+
+    } else {
+      div_nulo.innerHTML = ''
+    }
+    if (tamanho_nome < 10) {
+      div_nome.innerHTML = `O nome deve conter no mínimo 20 caracteres`
+      cadastro = false;
+      finalizarAguardar();
+      return false;
+    } else {
+      div_nome.innerHTML = ''
+    }
+    if (arroba < 1 || ponto < 1) {
+      div_email.innerHTML = `O email deve conter @ e '.'`
+      cadastro = false;
+      finalizarAguardar();
+      return false;
+    } else {
+      div_email.innerHTML = ''
+    }
+    if (tamanho_senha < 8) {
+      div_senha.innerHTML = `A senha deve conter no mínimo 8 caracteres`
+      cadastro = false;
+      finalizarAguardar();
+      return false;
+    } else {
+      div_senha.innerHTML = ''
+    }
+    if (confirmacaoSenhaVar != senhaVar || senhaVar == '') {
+      div_confirmacao.innerHTML = `A confirmação de senha deve ser igual a senha`
+      cadastro = false;
+      finalizarAguardar();
+      return false;
+    } else {
+      div_confirmacao.innerHTML = ''
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

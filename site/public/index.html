@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Inicial</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="assets/icon/janela.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="com-img">
+    <div class="main-nav">
+        <div class="nav">
+            <div>
+                <img src="assets/imgs/LOGO__2_-removebg-preview.png" alt="" class="logo">
+            </div>
+            <div class="opt">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+            </div>
+            <div class="last">
+                <img src="assets/imgs/narutinho.gif" alt="" class="narutinho">
+            </div>
+        </div>
+        <!-- <div class="cabecalho">
+            <h1>Nossos Recursos:</h1>
+        </div> -->
+        <div class="wrapper">
+
+            <div class="card-valores">
+                <div class="info">
+                    <h1>Exploração do Universo</h1>
+                    <p>Uma oportunidade para explorarem o universo de Naruto de forma detalhada e abrangente, fornecendo
+                        informações sobre personagens, histórias.</p>
+                </div>
+            </div>
+            <div class="card-valores">
+                <div class="info">
+                    <h1>Notícias e Atualizações</h1>
+                    <p>Manter os fãs atualizados sobre novos lançamentos, eventos relacionados ao Naruto anúncios de
+                        novos capítulos ou episódios.</p>
+                </div>
+            </div>
+            <div class="circulo">
+
+            </div>
+            <div class="card-valores">
+                <div class="info">
+                    <h1>Comunidade Engajada</h1>
+                    <p>Uma plataforma onde os fãs podem interagir, discutir teorias, compartilhar arte e fanfics,
+                        participar de quizzes e eventos temáticos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="cabecalho">
+            <h1>Galeria de Personagens</h1>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="../assets/imgs/slider.png" alt="Image 1"></div>
+                <div class="slide"><img src="../assets/imgs/slider2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="../assets/imgs/slider3.webp" alt="Image 3"></div>
+                <div class="slide"><img src="../assets/imgs/slider4.webp" alt="Image 4"></div>
+                <!-- Add more slides as needed -->
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <div class="cabecalho">
+            <h1>Sobre Mim</h1>
+        </div>
+        <main>
+            <section class="profile">
+                <img src="assets/imgs/minha-foto.jpeg" alt="Foto de Perfil" class="profile-pic">
+                <h2>Gisele Rezende</h2>
+                <p class="sobre-mim">Olá! Meu nome é Gisele Rezende Carvalho. Sou uma grande fã de Naruto. Comecei
+                    assistindo por hobby mas hoje não é apenas uma série de anime, mas sim uma fonte de inspiração e
+                    conforto. Me identifico profundamente com os personagens e suas jornadas de crescimento, superação e
+                    amizade. Decidi criar um blog sobre Naruto como uma forma de expressar meu amor pela série e
+                    compartilhar reflexões, análises e opiniões com outros fãs.</p>
+            </section>
+        </main>
+
+    </div>
+
+    <footer>
+        <div class="footer-grc">
+            <p>&copy; 2024 Gisele Rezende Carvalho.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+</html>
+<script>
+
+    let currentSlide = 0;
+
+    function changeSlide(direction) {
+        const slides = document.querySelectorAll('.slide');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        const slider = document.querySelector('.slides');
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+
+
+</script>
