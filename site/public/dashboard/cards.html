@@ -8,27 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classificação</title>
 
-
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
 
-    <script src="../js/sessao.js"></script>
-    <script src="../js/alerta.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body >
-
-  
-
-
+<body onload="atualizarTabela()">
 
     <div class="janela">
         <div class="header-left dash-header">
-            <img src="../assets/imgs/LOGO__2_-removebg-preview.png"  style="width: 200px;" alt="">
+            <img src="../assets/imgs/LOGO__2_-removebg-preview.png" style="width: 200px;" alt="">
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
@@ -50,27 +41,68 @@
             </div>
         </div>
 
-            
         <div class="container-classificacao">
             <h2>Tabela de Classificação</h2>
             <table border="1" id="tabelaClassificacao">
                 <thead>
                     <tr>
                         <th>Posição</th>
-                        <th>Usuário</th>
+                        <th>Jogador</th>
                         <th>Acertos</th>
                     </tr>
                 </thead>
-                <tbody>
-         
-
+                <tbody id="corpoTabela">
+                    <!-- Linhas da tabela serão adicionadas dinamicamente -->
                 </tbody>
             </table>
         </div>
-        
-</body>
-</html>
-<script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    </div>
 
-</script>
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <script>
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+        function adicionarUsuario(tabela, nomeUsuario, acertos, posicao) {
+            var linha = document.createElement('tr');
+            var lugar = document.createElement('td');
+            var jogador = document.createElement('td');
+            var qtdAcerto = document.createElement('td');
+            lugar.innerHTML = `${posicao}`;
+            jogador.textContent = nomeUsuario;
+            qtdAcerto.textContent = acertos;
+            linha.appendChild(lugar);
+            linha.appendChild(jogador);
+            linha.appendChild(qtdAcerto);
+            tabela.appendChild(linha);
+        }
+
+        function atualizarTabela(){
+            fetch('/medidas/classificacao')
+                .then(response => response.json())
+                .then(data => {
+                    var tabela = document.getElementById("corpoTabela");
+
+                    var linhas = tabela.querySelectorAll("tr");
+                    for (var i = 0; i < linhas.length; i++) {
+                        var linha = linhas[i];
+                        var jogador = linha.querySelector("td:nth-child(2)")
+                        var pontuacao = parseInt(linha.querySelector("td:nth-child(3)"));
+                        console.log(jogador, pontuacao);
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        var nomeUsuario = item.nome;
+                        var acertos = item.acertos;
+
+                        adicionarUsuario(tabela, nomeUsuario, acertos, i + 1);
+                    }
+                })
+                .catch(error => console.error('Erro ao buscar classificação:', error));
+        }
+        
+    </script>
+</body>
+
+</html>

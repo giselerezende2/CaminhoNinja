@@ -996,3 +996,65 @@ margin-right: 35px;
   .alternativas{
     color: #000;
   }
+
+  /* estilo tabela classificação */
+
+  /* Estilo geral da tabela */
+.container-classificacao {
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 30%;
+}
+
+.container-classificacao h2 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo da tabela */
+#tabelaClassificacao {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho da tabela */
+#tabelaClassificacao thead {
+  background-color: #ed924c;
+  color: white;
+}
+
+#tabelaClassificacao th, #tabelaClassificacao td {
+  padding: 12px 15px;
+  text-align: left;
+  text-align: center;  
+}
+
+#tabelaClassificacao th {
+  border-bottom: 2px solid #ddd;
+}
+
+/* Corpo da tabela */
+#tabelaClassificacao tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#tabelaClassificacao tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#tabelaClassificacao tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilo das células */
+#tabelaClassificacao td {
+  color: #333;
+}

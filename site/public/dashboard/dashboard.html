@@ -204,7 +204,7 @@
 
     var respostas = ['rock lee', 'kakashi', 'rim', 'hashirama', 'konan'];
     var pergunta_atual = 0;
-    var acertos = 0;
+    var acertosVar = 0;
 
     function armazenarResultados(id) {
         fetch("/usuarios/encerrar", {
@@ -247,7 +247,7 @@
         }
 
         if (selecionado == respostas[pergunta_atual]) { // verifica se a alternativa selecionada é igual à resposta correta armazenada na lista_respostas
-            acertos++;
+            acertosVar++;
         }
 
         pergunta_atual++;
@@ -271,7 +271,7 @@
     }
     function exibirResultados() {
         var score = document.getElementById('score');
-        score.innerText = `Você acertou ${acertos} de 5 questões!`;
+        score.innerText = `Você acertou ${acertosVar} de 5 questões!`;
     }
 
     function voltar() {
@@ -346,7 +346,7 @@
 
     function exibirPontuacao() {
         var score = document.getElementById('score2');
-        score2.innerText = `Você acertou ${acertos} de 5 questões!`;
+        score2.innerText = `Você acertou ${acertosVar} de 5 questões!`;
     }
 
     function voltar2() {
