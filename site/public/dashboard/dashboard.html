@@ -67,65 +67,40 @@
             </div>
         </div>
     </div>
-    <div class="container-quiz1" id="container-quiz1" style="display: none;">
-        <div id="div_mensagem1" style="display: none;" class="card-questao">
-            <h3>Questão 1</h3>
-            <h5>Qual o nome do personagem?</h5>
-            <img class="ninja" src="../assets/imgs/ninja1.jpg" alt=""><br>
-            <input type="radio" id="input_a1" name="1">A) Rock Lee<br>
-            <input type="radio" id="input_b1" name="1">B) Shikamaru<br>
-            <input type="radio" id="input_c1" name="1">C) Sasuke<br>
-            <input type="radio" id="input_d1" name="1">D) Gaara<br><br>
-            <button onclick="analisar()">Próxima</button>
-        </div>
-        <div id="div_mensagem2" style="display: none;" class="card-questao">
-            <h3>Questão 2</h3>
-            <h5>Qual o nome do personagem?</h5>
-            <img class="ninja" src="../assets/imgs/ninja2.jpeg" alt=""><br>
-            <input type="radio" id="input_a2" name="2">A) Minato<br>
-            <input type="radio" id="input_b2" name="2">B) Nagato<br>
-            <input type="radio" id="input_c2" name="2">C) Kakashi<br>
-            <input type="radio" id="input_d2" name="2">D) Itachi<br><br>
-            <button onclick="analisar1()">Próxima</button>
-        </div>
-        <div id="div_mensagem3" style="display: none;" class="card-questao">
-            <h3>Questão 3</h3>
-            <h5>Qual o nome do personagem?</h5>
-            <img class="ninja" src="../assets/imgs/ninja3.jpeg" alt=""><br>
-            <input type="radio" id="input_a3" name="3">A) Temari<br>
-            <input type="radio" id="input_b3" name="3">B) Rim<br>
-            <input type="radio" id="input_c3" name="3">C) Sakura <br>
-            <input type="radio" id="input_d3" name="3">D) Tsunade<br><br>
-            <button onclick="analisar2()">Próxima</button>
-        </div>
-        <div id="div_mensagem4" style="display: none;" class="card-questao">
-            <h3>Questão 4</h3>
-            <h5>Qual o nome do personagem?</h5>
-            <img class="ninja" src="../assets/imgs/ninja4.jpeg" alt=""><br>
-            <input type="radio" id="input_a4" name="4">A) Neji<br>
-            <input type="radio" id="input_b4" name="4">B) Madara<br>
-            <input type="radio" id="input_c4" name="4">C) Tobirama<br>
-            <input type="radio" id="input_d4" name="4">D) Hashirama<br><br>
-            <button onclick="analisar3()">Próxima</button>
-        </div>
-        <div id="div_mensagem5" style="display: none;" class="card-questao">
-            <h3>Questão 5</h3>
-            <h5>Qual o nome do personagem?</h5>
-            <img class="ninja" src="../assets/imgs/ninja5.jpeg" alt=""><br>
-            <input type="radio" id="input_a5" name="5">A) Ino<br>
-            <input type="radio" id="input_b5" name="5">B) Tenten<br>
-            <input type="radio" id="input_c5" name="5">C) Konan<br>
-            <input type="radio" id="input_d5" name="5">D) Hinata<br><br>
-            <button onclick="finalizar()">Finalizar</button>
-        </div>
+    <!-- <div class="container-quiz1" id="container-quiz1" style="display: none;"> -->
+    <div id="div_mensagem1" style="display: none;" class="card-questao">
+        <!-- <div id="div_mensagem1" class="card-questao"> -->
+        <h3 id="numQuestao">Questão 1</h3>
+        <h5>Qual é o personagem?</h5>
+        <img class="ninja" src="../assets/imgs/ninja1.jpg" alt=""><br>
+        <label>
+            <input type="radio" name="questao" value="rock lee">
+            <span class="alternativas">rock lee</span>
+        </label> <br>
+        <label>
+            <input type="radio" name="questao" value="shikamaru">
+            <span  class="alternativas">shikamaru</span>
+        </label> <br>
+        <label>
+            <input type="radio" name="questao" value="sasuke">
+            <span class="alternativas">sasuke</span>
+        </label> <br>
+        <label>
+            <input type="radio" name="questao" value="gaara">
+            <span  class="alternativas">gaara</span>
+        </label>
+        <br>
 
-        <div id="div_final" class="result">
-            <h2>Parabéns! Você completou o quiz.</h2>
-            <div class="score" id="score"></div>
-            <img class="naruto-final" src="../assets/imgs/natuto_inicio.png" alt="">
-            <button class="botao-voltar" onclick="voltar()">Voltar</button>
-        </div>
+        <button onclick="analisar()">Próxima</button>
     </div>
+
+    <div id="div_final" class="result">
+        <h2>Parabéns! Você completou o quiz.</h2>
+        <div class="score" id="score"></div>
+        <img class="naruto-final" src="../assets/imgs/natuto_inicio.png" alt="">
+        <button class="botao-voltar" onclick="voltar()">Voltar</button>
+    </div>
+
 
 
     <div class="container-quiz2" id="container-quiz2" style="display: flex; ">
@@ -180,11 +155,11 @@
             <button onclick="encerrar()">Finalizar</button>
         </div>
 
-        <div id="div_final" class="result">
+        <div id="div_final2" class="result">
             <h2>Parabéns! Você completou o quiz.</h2>
-            <div class="score" id="score"></div>
+            <div class="score" id="score2"></div>
             <img class="naruto-final" src="../assets/imgs/natuto_inicio.png" alt="">
-            <button class="botao-voltar" onclick="voltar()">Voltar</button>
+            <button class="botao-voltar" onclick="voltar2()">Voltar</button>
         </div>
     </div>
 </body>
@@ -192,12 +167,45 @@
 </html>
 
 <script>
+    // QUIZ 1
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var fkUsuarioVar = sessionStorage.ID_USUARIO;
     var acertosVar = 0;
     var errosVar = 0;
 
-      
+    var questoes = [
+        {
+            numQuestao: 'Questão 1',
+            imagem: '../assets/imgs/ninja1.jpg',
+            alternativas: ['rock lee', 'shikamaru', 'sasuke', 'gaara']
+        },
+        {
+            numQuestao: 'Questão 2',
+            imagem: '../assets/imgs/ninja2.jpeg',
+            alternativas: ['minato', 'nagato', 'kakashi', 'itachi']
+        },
+        {
+            numQuestao: 'Questão 3',
+            imagem: '../assets/imgs/ninja3.jpeg',
+            alternativas: ['temari', 'rim', 'sakura', 'tsunade']
+        },
+        {
+            numQuestao: 'Questão 4',
+            imagem: '../assets/imgs/ninja4.jpeg',
+            alternativas: ['neji', 'madara', 'tobirama', 'hashirama']
+        },
+        {
+            numQuestao: 'Questão 5',
+            imagem: '../assets/imgs/ninja5.jpeg',
+            alternativas: ['ino', 'tenten', 'konan', 'hinata']
+        }
+    ];
+
+    var respostas = ['rock lee', 'kakashi', 'rim', 'hashirama', 'konan'];
+    var pergunta_atual = 0;
+    var acertos = 0;
+
     function armazenarResultados(id) {
         fetch("/usuarios/encerrar", {
             method: "POST",
@@ -213,124 +221,65 @@
                 fkUsuarioServer: fkUsuarioVar,
                 fkQuizServer: id
             }),
-        }).then(function (armazenarResultados) {
-            const ctx = document.getElementById('resultadosGrafico').getContext('2d');
-            const quizChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Respostas Corretas', 'Respostas Incorretas'],
-                    datasets: [{
-                        label: 'Quantidade',
-                        data: [acertosVar, errosVar],
-                        backgroundColor: [
-                            'rgba(0, 128, 0, 0.5)',
-                            'rgba(255, 0, 0, 0.5)',
-                        ],
-                        borderColor: [
-                            'rgba(0, 128, 0, 1)',
-                            'rgba(255, 0, 0, 1)',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    label += context.raw;
-                                    return label;
-                                }
-                            }
-                        }
-                    }
-                }
+        }).then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
             });
-        })
-
     }
 
     function redirectToQuiz() {
         document.getElementById('divmensagem').style.display = "none"
         document.getElementById('div_mensagem1').style.display = "block"
-        document.getElementById('container-quiz1').style.display = "block"
-
 
     }
+
 
     function analisar() {
-        var alternativa1 = document.getElementById('input_a1').checked;
-        if (alternativa1) {
-            acertosVar++
-        } else {
-            errosVar++
+        var alternativas = document.getElementsByName('questao'); // armazena todos os elementos de input com o atributo name='questao'
+        var selecionado; // armazena o valor da alternativa selecionada.
+        for (var index = 0; index < alternativas.length; index++) { // percorre todas as alternativas e verifica qual delas está selecionada 
+            if (alternativas[index].checked) {
+                selecionado = alternativas[index].value;
+            }
         }
 
-        document.getElementById('div_mensagem1').style.display = "none"
-        document.getElementById('div_mensagem2').style.display = "block"
+        if (selecionado == respostas[pergunta_atual]) { // verifica se a alternativa selecionada é igual à resposta correta armazenada na lista_respostas
+            acertos++;
+        }
 
+        pergunta_atual++;
+
+        if (pergunta_atual < questoes.length) {
+        document.getElementById('numQuestao').textContent = questoes[pergunta_atual].numQuestao; // atualiza o texto do elemento com id numQuestao 
+        document.querySelector('.ninja').src = questoes[pergunta_atual].imagem; // Atualiza a imagem mostrada
+     
+        for (var index = 0; index < alternativas.length; index++) { // irá percorrer através de todas as alternativas d
+            alternativas[index].value = questoes[pergunta_atual].alternativas[index]; // define o valor da alternativa para a nova pergunta.
+            alternativas[index].nextElementSibling.textContent = questoes[pergunta_atual].alternativas[index]; // atualiza o texto associado a nova alternativa.
+            alternativas[index].checked = false;
+        }
+
+        } else {// se não houver mais pergunta
+            document.getElementById('div_mensagem1').style.display = "none";
+            document.getElementById('div_final').style.display = "block";
+            armazenarResultados(1);
+            exibirResultados();
+        }
+    }
+    function exibirResultados() {
+        var score = document.getElementById('score');
+        score.innerText = `Você acertou ${acertos} de 5 questões!`;
     }
 
-    function analisar1() {
-        var alternativa2 = document.getElementById('input_c2').checked;
-        if (alternativa2) {
-            acertosVar++
-        } else {
-            errosVar++
-        }
-
-        document.getElementById('div_mensagem2').style.display = "none"
-        document.getElementById('div_mensagem3').style.display = "block"
+    function voltar() {
+        window.location.href = 'cards.html';
     }
-    function analisar2() {
-        var alternativa3 = document.getElementById('input_b3').checked;
-        if (alternativa3) {
-            acertosVar++
-        } else {
-            errosVar++
-        }
 
-        document.getElementById('div_mensagem3').style.display = "none"
-        document.getElementById('div_mensagem4').style.display = "block"
-    }
-    function analisar3() {
-        var alternativa4 = document.getElementById('input_d4').checked;
-        if (alternativa4) {
-            acertosVar++
-        } else {
-            errosVar++
-        }
 
-        document.getElementById('div_mensagem4').style.display = "none"
-        document.getElementById('div_mensagem5').style.display = "block"
-    }
-    function finalizar() {
-        var alternativa5 = document.getElementById('input_c5').checked;
-        if (alternativa5) {
-            acertosVar++
-        } else {
-            errosVar++
-        }
-
-        document.getElementById('div_mensagem5').style.display = "none"
-        document.getElementById('div_final').style.display = "block"
-
-        armazenarResultados(1);
-        exibirResultados(1);
-       
-    } function exibirResultados(id) {
-            var score = document.getElementById('score');
-            score.innerText = `Você acertou ${acertosVar} de 5 questões!`;
-        }
-
+    // QUIZ 2 
     function direcionarToQuiz() {
         document.getElementById('divmensagem').style.display = "none"
         document.getElementById('div_mensagem1_quiz2').style.display = "block"
@@ -340,7 +289,7 @@
         var alternativa1 = document.getElementById('input_a1_2').checked;
         if (alternativa1) {
             acertosVar++
-        } else {
+        } else { 
             errosVar++
         }
         document.getElementById('div_mensagem1_quiz2').style.display = "none"
@@ -389,69 +338,19 @@
         }
 
         document.getElementById('div_mensagem5_quiz2').style.display = "none"
-        document.getElementById('div_final_quiz2').style.display = "block"
+        document.getElementById('div_final2').style.display = "block"
 
         armazenarResultados(2);
-        exibirResultados(1);
+        exibirPontuacao();
     }
-    
 
-    // function armazenarResultados() {
-    //     fetch("/usuarios/encerrar", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             // crie um atributo que recebe o valor recuperado aqui
-    //             // Agora vá para o arquivo routes/usuario.js
+    function exibirPontuacao() {
+        var score = document.getElementById('score2');
+        score2.innerText = `Você acertou ${acertos} de 5 questões!`;
+    }
 
-    //             acertosServer: acertosVar,
-    //             errosServer: errosVar,
-    //             fkUsuarioServer: fkUsuarioVar,
-    //             fkQuizServer: 2
-    //         }),
-    //     }).then(function (armazenarResultados) {
-    //         const ctx = document.getElementById('resultadosGrafico').getContext('2d');
-    //         const quizChart = new Chart(ctx, {
-    //             type: 'bar',
-    //             data: {
-    //                 labels: ['Respostas Corretas', 'Respostas Incorretas'],
-    //                 datasets: [{
-    //                     label: 'Quantidade',
-    //                     data: [acertosVar, errosVar],
-    //                     backgroundColor: [
-    //                         'rgba(0, 128, 0, 0.5)',
-    //                         'rgba(255, 0, 0, 0.5)',
-    //                     ],
-    //                     borderColor: [
-    //                         'rgba(0, 128, 0, 1)',
-    //                         'rgba(255, 0, 0, 1)',
-    //                     ],
-    //                     borderWidth: 1
-    //                 }]
-    //             },
-    //             options: {
-    //                 responsive: true,
-    //                 plugins: {
-    //                     legend: {
-    //                         position: 'top',
-    //                     },
-    //                     tooltip: {
-    //                         callbacks: {
-    //                             label: function (context) {
-    //                                 let label = context.label || '';
-    //                                 if (label) {
-    //                                     label += ': ';
-    //                                 }
-    //                                 label += context.raw;
-    //                                 return label;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         });
-    //     })
-    // }
+    function voltar2() {
+        window.location.href = 'cards.html';
+    }
+
 </script>
