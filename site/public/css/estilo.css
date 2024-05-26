@@ -120,7 +120,7 @@ body {
 
 /* FOOTER */
 
-.footer {
+/* .footer {
   background-color: #32b9cd;
   height: 150px;
   color: #fff;
@@ -135,7 +135,7 @@ body {
 
 .footer .container .version {
   font-size: 12px;
-}
+} */
 
 /* LOGIN */
 
@@ -377,7 +377,7 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 0;
+  margin-top: 10px;
 
 }
 
@@ -778,6 +778,7 @@ button.prev:hover, button.next:hover {
   text-align: center;
 }
 
+
 /* Estilos principais */
 main {
   padding: 2rem;
@@ -821,8 +822,6 @@ p.sobre-mim{
   width: 100%;
   padding: 1rem 0;
   text-align: center;
-  position: absolute;
-  bottom: 0;
 }
 
 
@@ -831,7 +830,7 @@ p.sobre-mim{
 .ninja {
   margin: 5px;
   width: 250px;
-  height: 200px;
+  height: 150px;
   border-radius: 10px;
 }
 
@@ -851,6 +850,7 @@ p.sobre-mim{
   margin: 0 auto;
   flex-direction: column;
 }
+
 
 .mensagem {
   margin: 0 auto;
@@ -944,3 +944,51 @@ p.sobre-mim{
 .entrada-box2 p {
   color: white;
 }
+/* tabela */
+.container-classificacao{
+  margin-left: 50%;
+  margin-top: 10%;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.result {
+  display: none;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s;
+  margin-left: 40%;
+  height: 550px;
+  width: 500px;
+}
+.result h2 {
+  margin: 0;
+}
+.score {
+  font-size: 48px;
+  color: #ed924c;
+  margin: 20px 0;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }}
+
+  .naruto-final{
+  width: 300px;
+  height: 350px;
+margin-right: 35px;
+  }
+
+  .botao-voltar{
+    height: 40px;
+    width: 50px;
+  }

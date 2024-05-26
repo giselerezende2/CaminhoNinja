@@ -22,7 +22,20 @@ function cadastrar(nome, email, senha, empresaId,cpf) {
     return database.executar(instrucaoSql);
 }
 
+function encerrar(acertos, erros, fkUsuario, fkQuiz) {
+
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO resposta (acertos, erros, fkUsuario, fkQuiz) VALUES ('${acertos}', '${erros}', '${fkUsuario}', '${fkQuiz}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    encerrar
 };

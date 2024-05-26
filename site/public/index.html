@@ -15,15 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de inicio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
 <body class="com-img">
     <div class="main-nav">
@@ -33,7 +25,7 @@
             </div>
             <div class="opt">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="">Sobre</a></li>
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </div>
@@ -71,6 +63,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
         <div class="cabecalho">
             <h1>Galeria de Personagens</h1>
         </div>
@@ -89,7 +82,7 @@
             <h1>Sobre Mim</h1>
         </div>
         <main>
-            <section class="profile">
+            <section id="sobre" class="profile">
                 <img src="assets/imgs/minha-foto.jpeg" alt="Foto de Perfil" class="profile-pic">
                 <h2>Gisele Rezende</h2>
                 <p class="sobre-mim">Olá! Meu nome é Gisele Rezende Carvalho. Sou uma grande fã de Naruto. Comecei
@@ -99,14 +92,15 @@
                     compartilhar reflexões, análises e opiniões com outros fãs.</p>
             </section>
         </main>
-
+        <br><br>
+        <footer>
+            <div class="footer-grc">
+                <p>&copy; 2024 Gisele Rezende Carvalho.</p>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="footer-grc">
-            <p>&copy; 2024 Gisele Rezende Carvalho.</p>
-        </div>
-    </footer>
+
 </body>
 
 </html>
@@ -114,12 +108,12 @@
 </html>
 <script>
 
-    let currentSlide = 0;
+    var currentSlide = 0;
 
     function changeSlide(direction) {
-        const slides = document.querySelectorAll('.slide');
+        var slides = document.querySelectorAll('.slide');
         currentSlide = (currentSlide + direction + slides.length) % slides.length;
-        const slider = document.querySelector('.slides');
+        var slider = document.querySelector('.slides');
         slider.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 

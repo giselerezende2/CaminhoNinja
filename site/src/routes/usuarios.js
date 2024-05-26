@@ -12,4 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/encerrar", function (req, res) {
+    usuarioController.encerrar(req, res);
+})
+
 module.exports = router;
