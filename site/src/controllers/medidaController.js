@@ -30,9 +30,21 @@ function classificacao(req, res) {
             res.status(500).json(erro.sqlMessage);
         });
 }
+
+function buscarUltimasMedidas(req, res) {
+    const {fk_usuario} = req.params
+    medidaModel.Obterdados(fk_usuario)
+        .then(result => res.status(200).json(result))
+        .catch(erro => {
+            console.error('Erro ao obter classificação:', erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     atualizarTabela,
-    classificacao
+    classificacao,
+    buscarUltimasMedidas
 };
 
 

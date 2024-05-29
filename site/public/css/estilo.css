@@ -1058,3 +1058,8 @@ margin-right: 35px;
 #tabelaClassificacao td {
   color: #333;
 }
+
+.graficoEvolu{
+  margin-top: 20px;
+  text-align: center;
+}

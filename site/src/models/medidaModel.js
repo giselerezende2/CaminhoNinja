@@ -25,9 +25,35 @@ function Obterclassificacao() {
     return database.executar(instrucaoSql);
 }
 
+function buscarUltimasMedidas(idUsuario, limite_linhas) {
+    const instrucaoSql = `
+        SELECT nome, acertos 
+        FROM resposta 
+        JOIN usuario ON resposta.fkUsuario = usuario.id
+        WHERE usuario.id = ${idUsuario}
+        ORDER BY acertos DESC 
+        LIMIT ${limite_linhas}`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+
+    return database.executar(instrucaoSql, [idUsuario, limite_linhas]);
+}
+
+function Obterdados(fk_usuario) {
+    const instrucaoSql = 
+        `SELECT nome, acertos
+        FROM resposta join usuario on resposta.fkUsuario = usuario.id
+        WHERE fkUsuario = '${fk_usuario}'
+        ORDER BY acertos`
+    ;
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     atualizarTabela,
-    Obterclassificacao
+    Obterclassificacao,
+    buscarUltimasMedidas,
+    Obterdados
 };
 
 
