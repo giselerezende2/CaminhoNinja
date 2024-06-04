@@ -9,7 +9,7 @@ router.get("/classificacao", function (req, res) {
     medidaController.classificacao(req, res);
 }); 
 
-router.get("/ultimas/:fk_usuario", function (req, res) {
+router.get("/ultimas", function (req, res) {
     medidaController.buscarUltimasMedidas(req, res);
 });
 

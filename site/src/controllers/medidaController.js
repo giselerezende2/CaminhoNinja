@@ -32,8 +32,7 @@ function classificacao(req, res) {
 }
 
 function buscarUltimasMedidas(req, res) {
-    const {fk_usuario} = req.params
-    medidaModel.Obterdados(fk_usuario)
+    medidaModel.Obterdados()
         .then(result => res.status(200).json(result))
         .catch(erro => {
             console.error('Erro ao obter classificação:', erro.sqlMessage);

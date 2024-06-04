@@ -51,6 +51,7 @@
                         <th>Posição</th>
                         <th>Jogador</th>
                         <th>Acertos</th>
+                        <th>Quiz</th>
                     </tr>
                 </thead>
                 <tbody id="corpoTabela">
@@ -71,17 +72,20 @@
     <script>
         b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-        function adicionarUsuario(tabela, nomeUsuario, acertos, posicao) {
+        function adicionarUsuario(tabela, nomeUsuario, acertos, posicao, fkQuiz) {
             var linha = document.createElement('tr');
             var lugar = document.createElement('td');
             var jogador = document.createElement('td');
             var qtdAcerto = document.createElement('td');
+            var quiz = document.createElement('td');
             lugar.innerHTML = `${posicao}`;
             jogador.textContent = nomeUsuario;
             qtdAcerto.textContent = acertos;
+            quiz.textContent = fkQuiz
             linha.appendChild(lugar);
             linha.appendChild(jogador);
             linha.appendChild(qtdAcerto);
+            linha.appendChild(quiz);
             tabela.appendChild(linha);
         }
 
@@ -96,15 +100,17 @@
                         var linha = linhas[i];
                         var jogador = linha.querySelector("td:nth-child(2)")
                         var pontuacao = parseInt(linha.querySelector("td:nth-child(3)"));
-                        console.log(jogador, pontuacao);
+                        var quiz = linha.querySelector("td:nth-child(4)")
+                        console.log(jogador, pontuacao, quiz);
                     }
 
                     for (var i = 0; i < data.length; i++) {
                         var item = data[i];
                         var nomeUsuario = item.nome;
                         var acertos = item.acertos;
+                        var quiz = item.fkQuiz;
 
-                        adicionarUsuario(tabela, nomeUsuario, acertos, i + 1);
+                        adicionarUsuario(tabela, nomeUsuario, acertos, i + 1, quiz);
                     }
                 })
                 .catch(error => console.error('Erro ao buscar classificação:', error));
@@ -114,7 +120,7 @@
         function obterDadosGrafico() {
             var fk_usuario = sessionStorage.ID_USUARIO;
 
-            fetch(`/medidas/ultimas/${fk_usuario}`, { cache: 'no-store' })
+            fetch(`/medidas/ultimas`, { cache: 'no-store' })
                 .then(response => response.json())
                 .then(dados => {
                     console.log(dados);

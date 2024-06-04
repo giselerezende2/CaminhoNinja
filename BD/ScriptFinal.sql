@@ -1,4 +1,5 @@
 create database CaminhoNinja;
+drop database CaminhoNinja;
 use CaminhoNinja;
 
 create table usuario (

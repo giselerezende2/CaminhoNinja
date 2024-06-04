@@ -17,7 +17,7 @@ function atualizarTabela(idUsuario, limite_linhas) {
 }
 function Obterclassificacao() {
     const instrucaoSql = 
-        `SELECT nome, acertos
+        `SELECT nome, acertos, fkQuiz
         FROM resposta
         JOIN usuario ON fkUsuario = usuario.id
         ORDER BY acertos DESC`
@@ -27,7 +27,7 @@ function Obterclassificacao() {
 
 function buscarUltimasMedidas(idUsuario, limite_linhas) {
     const instrucaoSql = `
-        SELECT nome, acertos 
+        SELECT nome, acertos, fkQuiz
         FROM resposta 
         JOIN usuario ON resposta.fkUsuario = usuario.id
         WHERE usuario.id = ${idUsuario}
@@ -39,11 +39,10 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
     return database.executar(instrucaoSql, [idUsuario, limite_linhas]);
 }
 
-function Obterdados(fk_usuario) {
+function Obterdados() {
     const instrucaoSql = 
         `SELECT nome, acertos
         FROM resposta join usuario on resposta.fkUsuario = usuario.id
-        WHERE fkUsuario = '${fk_usuario}'
         ORDER BY acertos`
     ;
     return database.executar(instrucaoSql);
