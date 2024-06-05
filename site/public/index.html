@@ -112,6 +112,7 @@
                 </div>
             </div>
         </div>
+
         <div class="cabecalho">
             <h1>Sobre Mim</h1>
         </div>
@@ -127,6 +128,10 @@
             </section>
         </main>
         <br><br>
+        <div class="content">
+            <img src="assets/imgs/natuto_inicio.png" alt="Foto">
+            <p>"Para virar um excelente ninja não necessariamente são os números de jutsus que você possui tudo que você precisa é coragem para não desistir!" <br><br>Uzumaki, Naruto</p>
+        </div>
         <footer>
             <div class="footer-grc">
                 <p>&copy; 2024 Gisele Rezende Carvalho.</p>
@@ -142,15 +147,7 @@
 </html>
 <script>
 
-    var currentSlide = 0;
-
-    function changeSlide(direction) {
-        var slides = document.querySelectorAll('.slide');
-        currentSlide = (currentSlide + direction + slides.length) % slides.length;
-        var slider = document.querySelector('.slides');
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
+    
 
 
 </script>

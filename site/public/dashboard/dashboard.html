@@ -28,14 +28,14 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body class="sem-img">
+<body class="manga">
     >
     <div class="janela">
         <div class="header-left">
             <img src="../assets/imgs/LOGO__2_-removebg-preview.png" style="width: 200px;" alt="">
-            <div class="hello">
+            <!-- <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+            </div> -->
             <div class="btn-nav-white">
                 <a href="./cards.html">
                     <h3>Classificação</h3>
@@ -71,23 +71,23 @@
     <div id="div_mensagem1" style="display: none;" class="card-questao">
         <!-- <div id="div_mensagem1" class="card-questao"> -->
         <h3 id="numQuestao">Questão 1</h3>
-        <h5>Qual é o personagem?</h5>
+        <h4>QUAL É O PERSONAGEM?</h4>
         <img class="ninja" src="../assets/imgs/ninja1.jpg" alt=""><br>
         <label>
             <input type="radio" name="questao" value="rock lee">
-            <span class="alternativas">rock lee</span>
+            <span class="alternativas">Rock lee</span>
         </label> <br>
         <label>
             <input type="radio" name="questao" value="shikamaru">
-            <span  class="alternativas">shikamaru</span>
+            <span  class="alternativas">Shikamaru</span>
         </label> <br>
         <label>
             <input type="radio" name="questao" value="sasuke">
-            <span class="alternativas">sasuke</span>
+            <span class="alternativas">Sasuke</span>
         </label> <br>
         <label>
             <input type="radio" name="questao" value="gaara">
-            <span  class="alternativas">gaara</span>
+            <span  class="alternativas">Gaara</span>
         </label>
         <br>
 
@@ -99,6 +99,9 @@
         <div class="score" id="score"></div>
         <img class="naruto-final" src="../assets/imgs/natuto_inicio.png" alt="">
         <button class="botao-voltar" onclick="voltar()">Voltar</button>
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
 
 
@@ -106,7 +109,7 @@
     <div class="container-quiz2" id="container-quiz2" style="display: flex; ">
         <div id="div_mensagem1_quiz2" style="display: none;" class="card-questao">
             <h3>Questão 1</h3>
-            <h5>Qual é o nome da vila oculta onde Naruto Uzumaki e seus amigos vivem?</h5><br>
+            <h4>QUAL É O NOME DA VILA OCULTA ONDE NARUTO UZUMAKI E SEUS AMIGOS VIVEM?</h4><br>
             <img class="vila" src="../assets/imgs/vila.jpg" alt=""><br>
             <input type="radio" id="input_a1_2" name="1">A) Vila da Folha<br>
             <input type="radio" id="input_b1_2" name="1">B) Vila da Areia<br>
@@ -116,7 +119,7 @@
         </div>
         <div id="div_mensagem2_quiz2" style="display: none;" class="card-questao">
             <h3>Questão 2</h3>
-            <h5>Onde ocorre a batalha final entre Naruto e Sasuke no final da Parte I da série?</h5><br>
+            <h4>ONDE OCORRE A BATALHA FINAL ENTRE NARUTO E SASUKE NO FINAL DA PARTE I DA SÉRIE?</h4><br>
             <img class="vila" src="../assets/imgs/vila.jpg" alt=""><br>
             <input type="radio" id="input_a2_2" name="2">A) Floresta da Morte<br>
             <input type="radio" id="input_b2_2" name="2">B) Monte Myoboku<br>
@@ -126,7 +129,7 @@
         </div>
         <div id="div_mensagem3_quiz2" style="display: none;" class="card-questao">
             <h3>Questão 3</h3>
-            <h5>Qual é o nome do local onde Orochimaru realiza seus experimentos?</h5><br>
+            <h4>QUAL É O NOME DO LOCAL ONDE OROCHIMARU REALIZA SEUS EXPERIMENTOS?</h4><br>
             <img class="vila" src="../assets/imgs/vila.jpg" alt=""><br>
             <input type="radio" id="input_a3_2" name="3">A) Vila da Areia<br>
             <input type="radio" id="input_b3_2" name="3">B) Monte Myoboku<br>
@@ -136,7 +139,7 @@
         </div>
         <div id="div_mensagem4_quiz2" style="display: none;" class="card-questao">
             <h3>Questão 4</h3>
-            <h5>Qual é o nome do local onde ocorre o Exame Chunin?</h5><br>
+            <h4>QUAL É O NOME DO LOCAL ONDE OCORRE O EXAME CHUNIN?</h4><br>
             <img class="vila" src="../assets/imgs/vila.jpg" alt=""><br>
             <input type="radio" id="input_a4_2" name="4">A) Vale do Fim<br>
             <input type="radio" id="input_b4_2" name="4">B) Campo de Treinamento<br>
@@ -146,7 +149,7 @@
         </div>
         <div id="div_mensagem5_quiz2" style="display: none;" class="card-questao">
             <h3>Questão 5</h3>
-            <h5>Qual é o nome do local onde Naruto aprende a técnica do Modo Sábio com os sapos sábios?</h5><br>
+            <h4>QUAL É O NOME DO LOCAL ONDE NARUTO APRENDE A TÉCNICA DO MODO SÁBIO COM OS SAPOS SÁBIOS?</h4><br>
             <img class="vila" src="../assets/imgs/vila.jpg" alt=""><br>
             <input type="radio" id="input_a5_2" name="5">A) Caverna Ryuchi<br>
             <input type="radio" id="input_b5_2" name="5">B) Monte Myoboku<br>
@@ -169,7 +172,7 @@
 <script>
     // QUIZ 1
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var fkUsuarioVar = sessionStorage.ID_USUARIO;
     var acertosVar = 0;
     var errosVar = 0;
@@ -178,31 +181,31 @@
         {
             numQuestao: 'Questão 1',
             imagem: '../assets/imgs/ninja1.jpg',
-            alternativas: ['rock lee', 'shikamaru', 'sasuke', 'gaara']
+            alternativas: ['Rock lee', 'Shikamaru', 'Sasuke', 'Gaara']
         },
         {
             numQuestao: 'Questão 2',
             imagem: '../assets/imgs/ninja2.jpeg',
-            alternativas: ['minato', 'nagato', 'kakashi', 'itachi']
+            alternativas: ['Minato', 'Nagato', 'Kakashi', 'Itachi']
         },
         {
             numQuestao: 'Questão 3',
             imagem: '../assets/imgs/ninja3.jpeg',
-            alternativas: ['temari', 'rim', 'sakura', 'tsunade']
+            alternativas: ['Temari', 'Rim', 'Sakura', 'Tsunade']
         },
         {
             numQuestao: 'Questão 4',
             imagem: '../assets/imgs/ninja4.jpeg',
-            alternativas: ['neji', 'madara', 'tobirama', 'hashirama']
+            alternativas: ['Neji', 'Madara', 'Tobirama', 'Hashirama']
         },
         {
             numQuestao: 'Questão 5',
             imagem: '../assets/imgs/ninja5.jpeg',
-            alternativas: ['ino', 'tenten', 'konan', 'hinata']
+            alternativas: ['Ino', 'Tenten', 'Konan', 'Hinata']
         }
     ];
 
-    var respostas = ['rock lee', 'kakashi', 'rim', 'hashirama', 'konan'];
+    var respostas = ['Rock lee', 'Kakashi', 'Rim', 'Hashirama', 'Konan'];
     var pergunta_atual = 0;
     var acertosVar = 0;
 
@@ -272,6 +275,28 @@
     function exibirResultados() {
         var score = document.getElementById('score');
         score.innerText = `Você acertou ${acertosVar} de 5 questões!`;
+
+        const criarGrafico = ( acertos, erros) => {
+            new Chart(ctx, {
+                type: tipo,
+                data: {
+                    labels: ["Acertos", "Erros"],
+                    datasets: [{
+                        data: [acertosVar, errosVar],
+                        backgroundColor: ["rgba(39, 163, 0, 0.4)", "rgba(186, 12, 12, 0.4)"],
+                        borderColor: ["rgb(39, 163, 0)", "rgb(186, 12, 12)"],
+                        borderWidth: 2,
+                    }],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
+        };
     }
 
     function voltar() {
